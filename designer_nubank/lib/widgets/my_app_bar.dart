@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
+  final bool showMenu;
+  final void calback onTap;
+
+
+  const MyAppBar({Key? key, required this.showMenu, this.ontap this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -9,7 +14,9 @@ class MyAppBar extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).padding.top,
         ),
-        Container(
+        GestureDetector(
+            onTap: onTap,
+            child: Container(
           color: Colors.purple.shade800,
             height: 120,
           child: Column(
@@ -18,7 +25,8 @@ class MyAppBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
-                  Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nubank_logo_2021.svg/1200px-Nubank_logo_2021.svg.png',
+                  Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nubank_logo_2021.svg/1200px-Nubank_logo_2021.svg.png',
                   color: Colors.white,
                   height: 35,
                   ),
@@ -34,11 +42,12 @@ class MyAppBar extends StatelessWidget {
                   )
                 ],
               ),
-              Icon(Icons.expand_more)
+              Icon(!showMenu ? Icons.expand_more : Icons.expand_less)
             ],
-          ),
+           ),
+          )
         )
-      ],
-    );
+       ]
+      );
   }
 }
