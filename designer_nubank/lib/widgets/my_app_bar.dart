@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
   final bool showMenu;
-  final void calback onTap;
+  final VoidCallback onTap;
+
+  const MyAppBar({Key? key, required this.showMenu, required this.onTap}) : super(key: key);
 
 
-  const MyAppBar({Key? key, required this.showMenu, this.ontap this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(

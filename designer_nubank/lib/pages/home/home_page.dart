@@ -6,9 +6,9 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-  class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
 
-   late bool _showMenu;
+  bool _showMenu = true;
 
   @override
   void initState() {
@@ -26,11 +26,14 @@ class HomePage extends StatefulWidget {
         children: <Widget> [
           MyAppBar(
             showMenu: _showMenu,
-          ),
+            onTap: (){
+              setState(() {
+                _showMenu = !_showMenu;
+              });
+            },
+          )
         ],
       ),
     );
   }
 }
-
-
