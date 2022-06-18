@@ -10,12 +10,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   bool _showMenu = true;
+  int _currentIndex = 1;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _showMenu = false;
+    _currentIndex = 0;
   }
 
   @override
@@ -36,7 +38,13 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          PageVeiwApp(top: _screenHeight * .24),
+          PageVeiwApp(
+            top: _screenHeight * .24,
+            onChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },),
         ],
       ),
     );

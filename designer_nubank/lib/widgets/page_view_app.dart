@@ -5,8 +5,9 @@ import 'card_app.dart';
 class PageVeiwApp extends StatelessWidget {
 
   final double top;
+  final ValueChanged<int> onChanged;
 
-  const PageVeiwApp({Key? key, required this.top}) : super(key: key);
+  const PageVeiwApp({Key? key, required this.top, required this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class PageVeiwApp extends StatelessWidget {
         left: 9,
         right: 9,
         child: PageView(
+          onPageChanged: onChanged,
           physics: BouncingScrollPhysics(),
           children: [
             CardApp(),
