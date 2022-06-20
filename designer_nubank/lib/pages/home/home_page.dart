@@ -45,11 +45,9 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          Positioned(
-              top: _screenHeight * .70,
-              child: MyDots(
-                currenteIndex: _currentIndex,
-              )
+          MyDots(
+            top: _screenHeight * .70,
+            currenteIndex: _currentIndex,
           )
         ],
       ),
