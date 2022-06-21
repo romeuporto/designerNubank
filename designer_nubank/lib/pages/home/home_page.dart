@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _screenHeight = MediaQuery.of(context).size.height;
-    if (_yPosition == null){
+    if (_yPosition == null) {
       _yPosition = _screenHeight * .24;
     }
     return Scaffold(
@@ -37,6 +37,8 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               setState(() {
                 _showMenu = !_showMenu;
+                _yPosition = _showMenu ? _screenHeight * .75 : _screenHeight * .24;
+
               });
             },
           ),
@@ -50,7 +52,10 @@ class _HomePageState extends State<HomePage> {
             onPanUpdate: (details) {
               double positionBottomLimit = _screenHeight * .75;
               double positionTopLimit = _screenHeight * .24;
+              double midlesPosition = positionBottomLimit - positionTopLimit;
+              midlesPosition = midlesPosition / 2;
               setState(() {
+
                 _yPosition += details.delta.dy;
 
                 _yPosition = _yPosition < positionTopLimit
@@ -61,9 +66,22 @@ class _HomePageState extends State<HomePage> {
                     ? positionBottomLimit
                     : _yPosition;
 
-                if (_yPosition == positionBottomLimit){
+                if (_yPosition != positionBottomLimit && details.delta.dy > 0) {
+                  _yPosition =
+                  _yPosition > positionTopLimit + midlesPosition - 50
+                      ? positionBottomLimit
+                      : _yPosition;
+                }
+                if (_yPosition != positionTopLimit && details.delta.dy < 0) {
+                  _yPosition =
+                  _yPosition < positionBottomLimit - midlesPosition
+                      ? positionTopLimit
+                      : _yPosition;
+                }
+
+                if (_yPosition == positionBottomLimit) {
                   _showMenu = true;
-                }else if(_yPosition == positionBottomLimit){
+                } else if (_yPosition == positionTopLimit) {
                   _showMenu = false;
                 }
               });

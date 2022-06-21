@@ -12,10 +12,6 @@ class CardApp extends StatelessWidget {
           borderRadius: BorderRadius.circular(5)
         ),
       ),
-
-
-
-
     );
   }
 }
