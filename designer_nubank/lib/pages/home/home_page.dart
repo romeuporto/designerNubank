@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           PageVeiwApp(
+            showMenu: _showMenu,
             top: _yPosition, //!_showMenu ? _screenHeight * .24 : _screenHeight * .75,
             onChanged: (index) {
               setState(() {
