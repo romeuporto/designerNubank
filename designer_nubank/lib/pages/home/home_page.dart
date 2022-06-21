@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _screenHeight = MediaQuery.of(context).size.height;
-    if (_yPosition == null) {
+    if (_yPosition == 0) {
       _yPosition = _screenHeight * .24;
     }
     return Scaffold(
