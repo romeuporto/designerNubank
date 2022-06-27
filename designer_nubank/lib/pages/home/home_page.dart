@@ -79,7 +79,6 @@ class _HomePageState extends State<HomePage> {
                       ? positionTopLimit
                       : _yPosition;
                 }
-
                 if (_yPosition == positionBottomLimit) {
                   _showMenu = true;
                 } else if (_yPosition == positionTopLimit) {
@@ -89,6 +88,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           MyDots(
+            showMenu: _showMenu,
             top: _screenHeight * .70,
             currenteIndex: _currentIndex,
           )
