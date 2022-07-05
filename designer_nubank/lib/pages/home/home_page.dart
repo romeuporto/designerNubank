@@ -1,3 +1,4 @@
+import 'package:designer_nubank/widgets/menu_app.dart';
 import 'package:designer_nubank/widgets/my_app_bar.dart';
 import 'package:designer_nubank/widgets/my_dots_app.dart';
 import 'package:designer_nubank/widgets/page_view_app.dart';
@@ -41,6 +42,10 @@ class _HomePageState extends State<HomePage> {
 
               });
             },
+          ),
+          MenuApp(
+            top: _screenHeight * .20,
+            showMenu: _showMenu,
           ),
           PageVeiwApp(
             showMenu: _showMenu,
