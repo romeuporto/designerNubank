@@ -1,3 +1,4 @@
+import 'package:designer_nubank/widgets/item_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -22,12 +23,55 @@ class MenuApp extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.55,
             child: Column(
               children: [
-                Image.network('https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/08/QR-Code-PNG-1024x1024.png',
+                Image.network(
+                  'https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/08/QR-Code-PNG-1024x1024.png',
                   height: 80,
                   color: Colors.white,
-
-
                 ),
+                SizedBox(height: 5),
+                Text.rich(
+                  TextSpan(text: "Banco ", children: [
+                    TextSpan(
+                      text: "260 - Nu Pagamentos S.A",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ]),
+                  style: TextStyle(fontSize: 12),
+                ),
+                SizedBox(height: 5),
+                Text.rich(
+                  TextSpan(text: "Agência ", children: [
+                    TextSpan(
+                      text: "0001",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ]),
+                  style: TextStyle(fontSize: 12),
+                ),
+                SizedBox(height: 5),
+                Text.rich(
+                  TextSpan(text: "Conta ", children: [
+                    TextSpan(
+                      text: "1234567-8",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ]),
+                  style: TextStyle(fontSize: 12),
+                ),
+                SizedBox(height: 25,),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ItemMenu(),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
