@@ -20,7 +20,10 @@ class MenuApp extends StatelessWidget {
           opacity: showMenu ? 1 : 0,
           child: Container(
             color: Colors.purple.shade800,
-            height: MediaQuery.of(context).size.height * 0.55,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.55,
             child: Column(
               children: [
                 Image.network(
@@ -66,15 +69,21 @@ class MenuApp extends StatelessWidget {
                 ),
                 SizedBox(height: 25,),
                 SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ItemMenu(),
-                    ],
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Column(children: [
+                        ItemMenu(
+                          text: 'Me Ajude',
+                          icon: Icons.info_outline,),
+                      ],
+
+                      )
                   ),
                 )
               ],
-            ),
-          ),
-        ));
+            ),)
+          ,
+        )
+    );
   }
 }
