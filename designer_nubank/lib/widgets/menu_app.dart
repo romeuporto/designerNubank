@@ -69,37 +69,61 @@ class MenuApp extends StatelessWidget {
                 ),
                 SingleChildScrollView(
                   child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Column(
-                        children: [
-                          ItemMenu(
-                            text: 'Perfil',
-                            icon: Icons.account_circle_outlined,
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Column(children: [
+                      ItemMenu(
+                        text: 'Perfil',
+                        icon: Icons.account_circle_outlined,
+                      ),
+                      ItemMenu(
+                        text: 'Configuração do Cartão',
+                        icon: Icons.credit_card,
+                      ),
+                      ItemMenu(
+                        text: 'Configurações da Conta',
+                        icon: Icons.settings,
+                      ),
+                      ItemMenu(
+                        text: 'Pessoa Jurídica',
+                        icon: Icons.store_mall_directory_outlined,
+                      ),
+                      ItemMenu(
+                        text: 'Configurações do App',
+                        icon: Icons.settings_cell,
+                      ),
+                      ItemMenu(
+                        text: 'Me Ajude',
+                        icon: Icons.info_outline,
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Container(
+                        height: 35,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          width: 0.7,
+                          color: Colors.white54,
+                        )),
+                        child: RaisedButton(
+                          color: Colors.purple.shade800,
+                          highlightColor: Colors.transparent,
+                          elevation: 0,
+                          disabledElevation: 0,
+                          focusElevation: 0,
+                          highlightElevation: 0,
+                          hoverElevation: 0,
+                          child: Text(
+                            "SAIR DO APP",
+                            style: TextStyle(fontSize: 10),
                           ),
-                          ItemMenu(
-                            text: 'Configuração do Cartão',
-                            icon: Icons.credit_card,
-                          ),
-                          ItemMenu(
-                            text: 'Configurações da Conta',
-                            icon: Icons.settings,
-                          ),
-                          ItemMenu(
-                            text: 'Pessoa Jurídica',
-                            icon: Icons.store_mall_directory_outlined,
-                          ),
-                          ItemMenu(
-                            text: 'Configurações do App',
-                            icon: Icons.settings_cell,
-                          ),
-                          ItemMenu(
-                            text: 'Me Ajude',
-                            icon: Icons.info_outline,
-                          ),
-
-                        ],
-                      )),
-                )
+                          onPressed: () {},
+                        ),
+                      ),
+                    ]),
+                  ),
+                ),
               ],
             ),
           ),

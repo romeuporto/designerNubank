@@ -19,6 +19,12 @@ class ItemMenu extends StatelessWidget {
       ),
       child: RaisedButton(
         color: Colors.purple.shade800,
+        highlightColor: Colors.transparent,
+        elevation: 0,
+        disabledElevation: 0,
+        focusElevation: 0,
+        highlightElevation: 0,
+        hoverElevation: 0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
