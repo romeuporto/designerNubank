@@ -20,10 +20,7 @@ class MenuApp extends StatelessWidget {
           opacity: showMenu ? 1 : 0,
           child: Container(
             color: Colors.purple.shade800,
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * 0.55,
+            height: MediaQuery.of(context).size.height * 0.55,
             child: Column(
               children: [
                 Image.network(
@@ -67,23 +64,45 @@ class MenuApp extends StatelessWidget {
                   ]),
                   style: TextStyle(fontSize: 12),
                 ),
-                SizedBox(height: 25,),
+                SizedBox(
+                  height: 25,
+                ),
                 SingleChildScrollView(
                   child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Column(children: [
-                        ItemMenu(
-                          text: 'Me Ajude',
-                          icon: Icons.info_outline,),
-                      ],
+                      child: Column(
+                        children: [
+                          ItemMenu(
+                            text: 'Perfil',
+                            icon: Icons.account_circle_outlined,
+                          ),
+                          ItemMenu(
+                            text: 'Configuração do Cartão',
+                            icon: Icons.credit_card,
+                          ),
+                          ItemMenu(
+                            text: 'Configurações da Conta',
+                            icon: Icons.settings,
+                          ),
+                          ItemMenu(
+                            text: 'Pessoa Jurídica',
+                            icon: Icons.store_mall_directory_outlined,
+                          ),
+                          ItemMenu(
+                            text: 'Configurações do App',
+                            icon: Icons.settings_cell,
+                          ),
+                          ItemMenu(
+                            text: 'Me Ajude',
+                            icon: Icons.info_outline,
+                          ),
 
-                      )
-                  ),
+                        ],
+                      )),
                 )
               ],
-            ),)
-          ,
-        )
-    );
+            ),
+          ),
+        ));
   }
 }
